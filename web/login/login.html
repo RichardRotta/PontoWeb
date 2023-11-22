@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en" data-bs-theme="auto">
+    <head><script src="../assets/js/color-modes.js"></script>
+        <title>Login</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="">
+        <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+        <meta name="generator" content="Hugo 0.115.4">
+
+        <link href="../assets/dist/css/bootstrap.min.css" rel="stylesheet" >
+        <link href="../styles/styles.css" rel="stylesheet" >
+        <link href="sign-in.css" rel="stylesheet">
+
+    </head>
+    <body class="d-flex align-items-center py-4 ">
+        <main class="form-signin w-100 m-auto ">
+            <form class="form-container" name="frmLogin" method="post" action="login.jsp">
+                <div class="d-flex justify-content-center align-items-center mb-5">   
+                    <img src="../imagem/image.png" alt="" width="30" height="30">
+                    <h6 class="h6 app-name">Magic Color Catalog</h6>
+                </div>
+                <h1 class="h3 mb-3 fw-normal" align="center">Login</h1>
+
+                <div class="form-floating mb-3">
+                    <input type="text" class="form-control" id="floatingInput" placeholder="name@example.com" name="email">
+                    <label for="floatingInput">Endereço de Email</label>
+                </div>
+                <div class="form-floating mb-3">
+                    <input type="password" class="form-control" id="floatingPassword" placeholder="Password" name="senha">
+                    <label for="floatingPassword">Senha</label>
+                </div>
+
+                <button class="btn btn-primary w-100" type="submit">Acessar</button>
+                <p class="mt-5 mb-3 text-body-secondary" align="center">&copy; 2023</p>
+            </form>
+
+             
+        </main>
+        
+        
+        <script src="../assets/dist/js/bootstrap.bundle.min.js"></script>
+        
+        <script>
+            const logado = localStorage.getItem("logado");
+            if (logado === "true") {
+               window.location.href = "../index.jsp";
+            } 
+        </script>
+
+    </body>
+</html>
