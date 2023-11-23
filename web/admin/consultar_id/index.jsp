@@ -3,8 +3,8 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <link href="../assets/dist/css/bootstrap.min.css" rel="stylesheet" >
-        <link href="../styles/styles.css" rel="stylesheet" >
+        <link href="../../assets/dist/css/bootstrap.min.css" rel="stylesheet" >
+        <link href="../../styles/styles.css" rel="stylesheet" >
         <link href="styles.css" rel="stylesheet" >
     </head>
     <body class="body-container">
