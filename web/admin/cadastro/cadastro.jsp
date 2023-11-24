@@ -43,7 +43,7 @@
         </div>
 <!--        <script>
             setTimeout(function () {
-                window.location.replace("http://localhost:8080/WebClinica/index.jsp");
+                window.location.replace("http://localhost:8080/PontoWeb/index.jsp");
             }, 2500);
         </script>-->
 

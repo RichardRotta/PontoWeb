@@ -4,7 +4,7 @@ import model.dao.UsuarioDao;
 
 /**
  *
- * @author alunos
+ * @author Richard e Derick
  */
 public class ControleUsuario {
     // Atributos

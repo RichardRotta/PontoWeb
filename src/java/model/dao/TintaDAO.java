@@ -1,26 +1,17 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
+
 package model.dao;
 
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
-import model.Tinta;
+import model.Funcionario;
 import util.ConectaDB;
-
-/**
- *
- * @author alunos
- */
-
     // Data Access Object
 public class TintaDAO {
     //Atrib.
     
     //Métodos
-    public boolean cadastrar(Tinta tinta) {
+    public boolean cadastrar(Funcionario tinta) {
         Connection conexao = null;
         
         try{
@@ -42,7 +33,7 @@ public class TintaDAO {
         }
     }
 
-    public Tinta consultarId(Tinta tinta) {
+    public Funcionario consultarId(Funcionario tinta) {
         Connection conexao = null;
         
         try{
@@ -88,7 +79,7 @@ public class TintaDAO {
             
             int n_reg = 0;
             while (rs.next()){  
-                Tinta tinta = new Tinta();
+                Funcionario tinta = new Funcionario();
                 
                 tinta.setId(rs.getString("id"));
                 tinta.setNome(rs.getString("nome"));
@@ -115,7 +106,7 @@ public class TintaDAO {
         }
     }
     
-    public boolean deletar(Tinta tinta) {
+    public boolean deletar(Funcionario tinta) {
         Connection conexao = null;
         
         try{
@@ -136,7 +127,7 @@ public class TintaDAO {
         }
     }
     
-    public boolean atualizar(Tinta tinta) {
+    public boolean atualizar(Funcionario tinta) {
         Connection conexao = null;
         
         try{
