@@ -34,6 +34,10 @@ public class Usuario {
     public void setSenha(String senha) {
         this.senha = senha;
     }
+
+    public void setAcessoPadrao(String acessoPadrao) {
+        this.acessoPadrao = acessoPadrao;
+    }
     
     public String getAcessoPadrao()
     {

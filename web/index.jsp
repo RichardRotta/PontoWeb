@@ -18,11 +18,10 @@
             Usuario usuario = new Usuario();
 
             ControleUsuario controleUsuario = new ControleUsuario();
-            if (controleUsuario.logarPadrao(ra, senha)) {
-                String acesso = usuario.getAcessoPadrao();
+            if (controleUsuario.logar(ra, senha)) {
         %>
         <script>localStorage.setItem("logado", "true");</script>
-        <script> window.location.href = 'admin/cadastro/index.jsp';</script>
+        <script> window.location.href = 'usuarios/index.jsp';</script>
         <%
         } else {
         %>
