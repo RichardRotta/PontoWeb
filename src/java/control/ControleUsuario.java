@@ -10,16 +10,13 @@ public class ControleUsuario {
     // Atributos
     
     // Métodos
-    public boolean logarPadrao(String ra, String senha) throws ClassNotFoundException{
-        Usuario usuario = new Usuario();
-        usuario.setRa(ra);
-        usuario.setSenha(senha);
-        
-        UsuarioDao usuarioDAO = new UsuarioDao();
-        if (usuarioDAO.validarLoginPadrao(usuario)==null){
-            return false;
-        }else{
-            return true;
-        }        
-    }
+   public String logarPadrao(String ra, String senha) throws ClassNotFoundException {
+    Usuario usuario = new Usuario();
+    usuario.setRa(ra);
+    usuario.setSenha(senha);
+
+    UsuarioDao usuarioDAO = new UsuarioDao();
+    return usuarioDAO.validarLoginPadrao(usuario);
+}
+
 }

@@ -9,13 +9,12 @@ public class Usuario {
     // Atributos
     private String ra;
     private String senha;
-    private String acessoPadrao;
+    private String acessoAdm;
     private String acessoGerente;
             
     //Método Construtor
     public Usuario(){
-        this.acessoPadrao = "padrao";
-        this.acessoPadrao = "gerente";
+        
     }
     
     //Métodos
@@ -34,14 +33,22 @@ public class Usuario {
     public void setSenha(String senha) {
         this.senha = senha;
     }
-    
-    public String getAcessoPadrao()
-    {
-        return this.acessoPadrao;
+
+    public String getAcessoAdm() {
+        return acessoAdm;
+    }
+
+    public void setAcessoAdm(String acessoAdm) {
+        this.acessoAdm = acessoAdm;
     }
 
     public String getAcessoGerente() {
-        return this.acessoGerente;
+        return acessoGerente;
+    }
+
+    public void setAcessoGerente(String acessoGerente) {
+        this.acessoGerente = acessoGerente;
     }
     
+   
 }
