@@ -11,7 +11,7 @@ public class ConectaDB {
         Connection conn = null;
         try{
             Class.forName("com.mysql.jdbc.Driver");
-            conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/magic_color_catalog","root","");        
+            conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/pontoweb","root","");        
         }
         catch(SQLException ex){}
         return conn;        

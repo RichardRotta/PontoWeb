@@ -7,24 +7,41 @@ package model;
  */
 public class Usuario {
     // Atributos
-    private String email;
-    private String senha;    
+    private String ra;
+    private String senha;
+    private String acessoPadrao;
+    private String acessoGerente;
             
+    //Método Construtor
+    public Usuario(){
+        this.acessoPadrao = "padrao";
+        this.acessoPadrao = "gerente";
+    }
+    
     //Métodos
-    public String getEmail() {
-        return this.email;
+    public String getRa() {
+        return this.ra;
     }
 
     public String getSenha() {
         return this.senha;
     }
 
-    public void setEmail(String email) {
-        this.email = email;
+    public void setRa(String ra) {
+        this.ra = ra;
     }
 
     public void setSenha(String senha) {
         this.senha = senha;
+    }
+    
+    public String getAcessoPadrao()
+    {
+        return this.acessoPadrao;
+    }
+
+    public String getAcessoGerente() {
+        return this.acessoGerente;
     }
     
 }

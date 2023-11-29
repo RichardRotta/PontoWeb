@@ -8,40 +8,48 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-           <link href="../assets/dist/css/bootstrap.min.css" rel="stylesheet" >
+        <link href="../assets/dist/css/bootstrap.min.css" rel="stylesheet" >
 
     </head>
     <body>
         <%
-            String email = request.getParameter("email");
+            String ra = request.getParameter("ra");
             String senha = request.getParameter("senha");
+            Usuario usuario = new Usuario();
 
             ControleUsuario controleUsuario = new ControleUsuario();
-            if (controleUsuario.logar(email, senha)) {
-
+            if (controleUsuario.logarPadrao(ra, senha)) {
+                String acesso = usuario.getAcessoPadrao();
         %>
         <script>localStorage.setItem("logado", "true");</script>
-        <script> window.location.href = '../index.jsp';</script>
-        <%            } else {  %>
+        <script> window.location.href = 'admin/cadastro/index.jsp';</script>
+        <%
+        } else {
+        %>
         <div class="container p-3">
             <div class="container p-4 mt-5">
                 <h3 class="mt-5 mb-4 container">
                     Oops...
                     <small class="text-muted">Login negado</small>
-                    <h6 class="text-muted ms-3 mb-5" href='login.html'>Clique aqui e tente novamente</small>
                 </h3>
                 <img class="img-fluid" src="../imagem/mensagem/access_denied.svg" alt="não há itens"  width="300" 
                      height="450" /> 
-
             </div>
         </div>
-        <%   }
+
+        <script>
+            setTimeout(function () {
+                window.location.replace("http://localhost:8080/PontoWeb");
+            }, 2500);
+        </script>
+        <% }
+
         %>
     </body>
     <script>
-        
-        function onRedirect () {
-             window.location.href = "login.html";
+
+        function onRedirect() {
+            window.location.href = "login.html";
         }
     </script>
 </html>

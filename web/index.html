@@ -15,7 +15,7 @@
     </head>
     <body class="d-flex align-items-center py-4 ">
         <main class="form-signin w-100 m-auto ">
-            <form class="form-container" name="frmLogin" method="post" action="login.jsp">
+            <form class="form-container" name="frmLogin" method="post" action="index.jsp">
                 <div class="d-flex justify-content-center align-items-center mb-5">   
                     <img src="../imagem/image.png" alt="" width="30" height="30">
                     <h6 class="h6 app-name">PontoWeb</h6>
@@ -23,7 +23,7 @@
                 <h1 class="h3 mb-3 fw-normal" align="center">Login</h1>
 
                 <div class="form-floating mb-3">
-                    <input type="text" class="form-control" id="floatingInput" placeholder="1234" name="login">
+                    <input type="text" class="form-control" id="floatingInput" placeholder="ra" name="ra">
                     <label for="floatingInput">Usuário</label>
                 </div>
                 <div class="form-floating mb-3">
@@ -42,10 +42,10 @@
         <script src="../assets/dist/js/bootstrap.bundle.min.js"></script>
         
         <script>
-            const logado = localStorage.getItem("logado");
-            if (logado === "true") {
-               window.location.href = "../index.jsp";
-            } 
+//            const logado = localStorage.getItem("logado");
+//            if (logado === "true") {
+//               window.location.href = "";
+//            } 
         </script>
 
     </body>

@@ -13,12 +13,12 @@ public class UsuarioDao {
     // Atrib.
     
     // Métodos
-    public Usuario validarLogin(Usuario usuario) throws ClassNotFoundException{        
+    public Usuario validarLoginPadrao(Usuario usuario) throws ClassNotFoundException{        
         Connection conexao = null;
         try{
             conexao = ConectaDB.conectar();
             Statement stmt = conexao.createStatement();
-            String sql = "SELECT * from usuario WHERE email = '" + usuario.getEmail()+ "' and senha = '" + usuario.getSenha() + "'";
+            String sql = "SELECT * from usuario WHERE ra = '" + usuario.getRa()+ "' and senha = '" + usuario.getSenha() + "'";
             ResultSet rs = stmt.executeQuery(sql);
             
             int n_reg = 0;
@@ -36,5 +36,5 @@ public class UsuarioDao {
             System.out.println(" Exception: " + ex.toString());
             return null;
         }         
-    }
+    }      
 }
