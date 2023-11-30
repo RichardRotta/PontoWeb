@@ -1,5 +1,5 @@
-<%@page import="model.dao.TintaDAO"%>
-<%@page import="model.Tinta"%>
+<%@page import="model.dao.FuncionarioDAO"%>
+<%@page import="model.Funcionario"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -12,25 +12,25 @@
         <%
             String ra = request.getParameter("ra");
 
-            Tinta tinta = new Tinta();
-            tinta.setRa(ra);
+            Funcionario funcionario = new Funcionario();
+            funcionario.setRa(ra);
 
-            TintaDAO tintaDAO = new TintaDAO();
+            FuncionarioDAO funcionarioDAO = new FuncionarioDAO();
 
-            if (tintaDAO.consultarRa(tinta) != null) {
+            if (funcionarioDAO.consultarRa(funcionario) != null) {
         %>
         <div class="single-item-container p-5">
             <h3 class="mb-4">Login: Cadastro</h3> 
 
                 <form class="" name="frmAltFunc" method="post" action="cadastrar.jsp">
                     <label for="nome">RA:</label>
-                    <input type="text"  name="ra" class="form-control mb-3" id="ra" value="<%= tinta.getRa()%>">
+                    <input type="text"  name="ra" class="form-control mb-3" id="ra" value="<%= funcionario.getRa()%>">
 
                     <label for="descricao">Senha:</label>
-                    <input type="text"  name="senha" class="form-control mb-3" id="senha"  value="<%= tinta.getSenha()%>">
+                    <input type="text"  name="senha" class="form-control mb-3" id="senha"  value="<%= funcionario.getSenha()%>">
 
                     <label for="image">Acesso:</label>
-                    <input type="text"  name="acesso" class="form-control mb-3" id="acesso" value="<%= tinta.getAcesso()%>">
+                    <input type="text"  name="acesso" class="form-control mb-3" id="acesso" value="<%= funcionario.getAcesso()%>">
 
                     <div class="d-flex  justify-content-center">
                         <button type="reset" class="btn btn-primary ">Limpar</button>
@@ -42,7 +42,7 @@
 
         <%
             } else {
-                out.println("<br> <b>Tinta não encontrada! <b>");
+                out.println("<br> <b>Funcionario não encontrada! <b>");
             }
 
         %>

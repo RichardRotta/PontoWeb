@@ -1,5 +1,5 @@
-<%@page import="model.dao.TintaDAO"%>
-<%@page import="model.Tinta"%>
+<%@page import="model.dao.FuncionarioDAO"%>
+<%@page import="model.Funcionario"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -7,7 +7,7 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     </head>
     <body>
-        <h1>Atualizar Tinta</h1>
+        <h1>Atualizar Funcionario</h1>
 
         <%
             request.setCharacterEncoding("UTF-8");
@@ -17,15 +17,15 @@
             String senha = request.getParameter("senha");
             String acesso = request.getParameter("acesso");
 
-            Tinta tinta = new Tinta();
+            Funcionario funcionario = new Funcionario();
             
-            tinta.setRa(ra);
-            tinta.setNome(senha);
-            tinta.setCpf(acesso);
+            funcionario.setRa(ra);
+            funcionario.setNome(senha);
+            funcionario.setCpf(acesso);
 
-            TintaDAO tintaDAO = new TintaDAO();
+            FuncionarioDAO funcionarioDAO = new FuncionarioDAO();
 
-            if (tintaDAO.atualizar(tinta) == true) {
+            if (funcionarioDAO.atualizarFuncionario(funcionario) == true) {
         %>
         <h1>Cadastrado com Sucesso!</h1>
         <div class="">
@@ -39,7 +39,7 @@
 
         <%
             } else {
-                out.println("<br> <b>Tinta não alterada! <b>");
+                out.println("<br> <b>Funcionario não alterada! <b>");
             }
 
         %>
