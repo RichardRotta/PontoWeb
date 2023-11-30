@@ -10,7 +10,7 @@
     <body class="body-container p-4">
         <div class="container p-5">
             <h1 class="h3 mb-3">Cadastro</h1>
-            <form class="form-container" name="FormCliCad" method="post" action="cadastro/cadastro.jsp">
+            <form class="form-container" name="FormCliCad" method="post" action="cadastro.jsp">
 
                 <div class="mb-3">
                     <label for="nome" class="form-label">RA</label>
@@ -29,10 +29,6 @@
                     <input type="text" class="form-control" id="rg" name="rg">
                 </div>
                 <div class="mb-3">
-                    <label for="recomendacaoUso" class="form-label">E-mail</label>
-                    <input type="text" class="form-control" id="email" name="email">
-                </div>
-                <div class="mb-3">
                     <label for="recomendacaoUso" class="form-label">Setor</label>
                     <input type="text" class="form-control" id="setor" name="setor">
                 </div>
@@ -45,10 +41,6 @@
                     <input type="text" class="form-control" id="dataNascimento" name="dataNascimento">
                 </div>
                 <div class="mb-3">
-                    <label for="recomendacaoUso" class="form-label">Equipe</label>
-                    <input type="text" class="form-control" id="equipe" name="equipe">
-                </div>
-                <div class="mb-3">
                     <label for="recomendacaoUso" class="form-label">Cargo</label>
                     <input type="text" class="form-control" id="cargo" name="cargo">
                 </div>
@@ -57,8 +49,8 @@
                     <input type="text" class="form-control" id="cargaHora" name="cargaHora">
                 </div>
                 <div class="mb-3">
-                    <label for="recomendacaoUso" class="form-label">Status</label>
-                    <input type="text" class="form-control" id="status" name="status">
+                    <label for="recomendacaoUso" class="form-label">Horas Extras</label>
+                    <input type="text" class="form-control" id="cargaExtra" name="horaExtra">
                 </div>
 
                 <div class="d-flex  justify-content-center">
