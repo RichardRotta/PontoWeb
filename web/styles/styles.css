@@ -2,11 +2,11 @@
 }
 
 .form-container {
-    width: 50%;
+    width: 100%;
+    margin: 0 auto;
     background-color: #ffffff;
     padding: 32px;
     border-radius: 15px;
-    text-align: center;
 }
 
 .app-name {
@@ -33,6 +33,10 @@
 
 .color_itens{
     color: #408B6D;
+}
+
+.link-container{
+    text-align: center;
 }
 
 .link-container button{
