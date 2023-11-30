@@ -9,13 +9,8 @@
     </head>
     <body class="body-container p-4">
         <div class="container p-5">
-            <h1 class="h3 mb-3">Cadastro</h1>
-            <form class="form-container" name="FormCliCad" method="post" action="cadastro.jsp">
-
-                <div class="mb-3">
-                    <label for="nome" class="form-label">RA</label>
-                    <input type="text" class="form-control" id="ra" name="ra">
-                </div>
+            <form class="form-container" name="FormCadFun" method="post" action="cadastro.jsp">
+                <h1 class="h3 mb-3">Cadastro do Funcionário</h1>
                 <div class="mb-3">
                     <label for="nome" class="form-label">Nome</label>
                     <input type="text" class="form-control" id="nome" name="nome">
@@ -48,10 +43,26 @@
                     <label for="recomendacaoUso" class="form-label">Carga Horária</label>
                     <input type="text" class="form-control" id="cargaHora" name="cargaHora">
                 </div>
-                <div class="mb-3">
+                <div class="mb-5">
                     <label for="recomendacaoUso" class="form-label">Horas Extras</label>
                     <input type="text" class="form-control" id="cargaExtra" name="horaExtra">
                 </div>
+
+                <h1 class="h3 mt-5 mb-3">Cadastro Usuário do Funcionário</h1>
+                <div class="mb-3">
+                    <label for="nome" class="form-label">RA</label>
+                    <input type="text" class="form-control" id="ra" name="ra">
+                </div>
+                <div class="mb-3">
+                    <label for="nome" class="form-label">Senha</label>
+                    <input type="text" class="form-control" id="senha" name="senha">
+                </div>
+                <div class="mb-3">
+                    <label for="descricao" class="form-label">Acesso</label>
+                    <input type="text" class="form-control" id="acesso" name="acesso">
+                </div>
+
+                <input type="hidden" name="funcionarioForm" value="funcionario">
 
                 <div class="d-flex  justify-content-center">
                     <button type="reset" class="btn btn-primary ">Limpar</button>

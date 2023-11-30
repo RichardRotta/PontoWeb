@@ -5,14 +5,16 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <link href="../assets/dist/css/bootstrap.min.css" rel="stylesheet" >
-        <link href="../styles/styles.css" rel="stylesheet" >
+        <link href="../../assets/dist/css/bootstrap.min.css" rel="stylesheet" >
+        <link href="../../styles/styles.css" rel="stylesheet" >
     </head>
     <body>
+
         <%
             request.setCharacterEncoding("UTF-8");
 
             String ra = request.getParameter("ra");
+            String senha = request.getParameter("senha");
             String nome = request.getParameter("nome");
             String cpf = request.getParameter("cpf");
             String rg = request.getParameter("rg");
@@ -22,11 +24,13 @@
             String cargo = request.getParameter("cargo");
             String cargaHora = request.getParameter("cargaHora");
             String horaExtra = request.getParameter("horaExtra");
+            String acesso = request.getParameter("acesso");
 
             Funcionario funcionario = new Funcionario();
 
             funcionario.setRa(ra);
             funcionario.setNome(nome);
+            funcionario.setSenha(senha);
             funcionario.setCpf(cpf);
             funcionario.setRg(rg);
             funcionario.setSetor(setor);
@@ -35,12 +39,12 @@
             funcionario.setCargo(cargo);
             funcionario.setCargaHora(cargaHora);
             funcionario.setHoraExtra(horaExtra);
+            funcionario.setAcesso(acesso);
 
             FuncionarioDAO funcionarioDAO = new FuncionarioDAO();
 
             if (funcionarioDAO.cadastrarFuncionario(funcionario) == true) {
         %>
-
         <div class="container p-3">
             <div class="container p-4 mt-5">
                 <h3 class="mt-5 mb-4 container">
@@ -56,7 +60,6 @@
                 window.location.replace("http://localhost:8080/PontoWeb/admin");
             }, 2500);
         </script>
-
         <%
         } else {
         %>
@@ -65,7 +68,7 @@
         </div>
         <script>
             setTimeout(function () {
-                window.location.replace("http://localhost:8080/PontoWeb/admin");
+                window.location.replace("http://localhost:8080/PontoWeb/admin/cadastro_func");
             }, 2500);
         </script>
         <%

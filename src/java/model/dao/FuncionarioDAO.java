@@ -16,14 +16,14 @@ public class FuncionarioDAO {
             conexao = ConectaDB.conectar();
             Statement stmt = conexao.createStatement();
 
-            String sql = "INSERT into funcionario(ra, nome, cpf, rg, setor, numTelefone, dataNascimento, cargo, cargaHora, horaExtra) "
-                    + "values('" + funcionario.getRa() + "','" + funcionario.getNome() + "','" + funcionario.getCpf()
-                    + "', '" + funcionario.getRg() + "','" + funcionario.getSetor() + "','" + funcionario.getNumTelefone()
-                    + "', '" + funcionario.getDataNascimento() + "','" + funcionario.getCargo() + "','" + funcionario.getCargaHora()
-                    + "', '" + funcionario.getHoraExtra() + "')";
+            String sql = "INSERT into funcionario(ra, senha, nome, cpf, rg, setor, numTelefone, dataNascimento, cargo, cargaHora, horaExtra, acesso) "
+                    + "values('" + funcionario.getRa() + "','" + funcionario.getSenha() + "','" + funcionario.getNome() 
+                    + "','" + funcionario.getCpf() + "', '" + funcionario.getRg() + "','" + funcionario.getSetor() 
+                    + "','" + funcionario.getNumTelefone()+ "', '" + funcionario.getDataNascimento() 
+                    + "','" + funcionario.getCargo() + "','" + funcionario.getCargaHora() + "', '" + funcionario.getHoraExtra() 
+                    + "','" + funcionario.getAcesso() + "')";
 
             stmt.executeUpdate(sql); // Insert, Delete ou Update            
-            System.out.println(" Registro Inserido! ");
             conexao.close();
             return true;
 
