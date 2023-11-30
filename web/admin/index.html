@@ -4,17 +4,18 @@
         <title>Administrador</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="../assets/dist/css/bootstrap.min.css" rel="stylesheet" >
+        <link href="../styles/styles.css" rel="stylesheet" >
+
     </head>
-    <body>
-        <div class="container">
-            <h1>Escolha o que deseja fazer!</h1>
-            <div>
-                <a href="http://localhost:8080/PontoWeb/admin/cadastro_func">Cadastrar Funcionário</a><br/>
-                <a href="http://localhost:8080/PontoWeb/admin/cadastro_usuario">Cadastrar Usuário</a><br/>
-                <a href="http://localhost:8080/PontoWeb/admin/consultar_ra">Consultar RA</a><br/>
-                <a href="http://localhost:8080/PontoWeb/admin/atualizar_func">Atualizar Funcionário</a><br/>
-                <a href="http://localhost:8080/PontoWeb/admin/atualizar_usuario">Atualizar Usuário</a><br/>
-                <a href="http://localhost:8080/PontoWeb/admin/excluir">Excluir</a>
+    <body class="body-container">
+        <div class="container p-5 form-container">
+            <h1 class="h3 mb-5">Escolha o que deseja fazer!</h1>
+            <div class="link-container ">
+                <button><a href="http://localhost:8080/PontoWeb/admin/cadastro_func">Cadastrar Funcionário</a></button><br/>
+                <button><a href="http://localhost:8080/PontoWeb/admin/consultar_ra">Consultar RA</a></button><br/>
+                <button><a href="http://localhost:8080/PontoWeb/admin/atualizar_func">Atualizar Funcionário</a></button><br/>
+                <button><a href="http://localhost:8080/PontoWeb/admin/excluir">Excluir</a></button>
             </div>
         </div>
     </body>

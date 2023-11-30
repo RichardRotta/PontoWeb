@@ -2,9 +2,11 @@
 }
 
 .form-container {
+    width: 50%;
     background-color: #ffffff;
     padding: 32px;
     border-radius: 15px;
+    text-align: center;
 }
 
 .app-name {
@@ -33,6 +35,28 @@
     color: #408B6D;
 }
 
-.selecao_setores a{
-    appearance: button;
+.link-container button{
+    background-color: #429272;
+    margin-bottom: 10px;
+    border-radius: 10px;
+    border: none;
+    padding: 10px;
+    width: 50%;
+}
+
+.link-container button:hover{
+    background-color: white;
+    border: solid #429272;
+    width: 50%;
+}
+
+.link-container a:hover{
+    color: #429272;
+    font-weight: 700;
+}
+
+.link-container a{
+    color: white;
+    font-size: 18px;
+    text-decoration: none;
 }

@@ -1,5 +1,5 @@
-<%@page import="model.dao.TintaDAO"%>
-<%@page import="model.Tinta"%>
+<%@page import="model.dao.FuncionarioDAO"%>
+<%@page import="model.Funcionario"%>
 <%@page import="java.util.List"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 
