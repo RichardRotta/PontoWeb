@@ -8,8 +8,8 @@
     </head>
     <body class="body-container">
         <div class="container p-5">
-            <h1 class="h3 mb-3">Alterar</h1>
-            <form name="FormCliCons form-container" method="post" action="alterar/cons_id_alterar.jsp">
+            <h1 class="h3 mb-3">Atualizar</h1>
+            <form name="FormCliCons form-container" method="post" action="cons_ra_atualizar.jsp">
                 <div class="mb-3">
                     <input type="text" placeholder="Insira o RA desejado" class="form-control" id="ra" name="ra">
                 </div>

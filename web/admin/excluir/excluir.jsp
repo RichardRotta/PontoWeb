@@ -12,10 +12,10 @@
     <body>
 
         <%
-            String id = request.getParameter("id");
+            String ra = request.getParameter("ra");
 
             Tinta tinta = new Tinta();
-            tinta.setId(id);
+            tinta.setId(ra);
 
             TintaDAO tintaDAO = new TintaDAO();
 
@@ -34,11 +34,11 @@
             </div>
         </div>
 
-<!--        <script>
+        <script>
             setTimeout(function () {
-                window.location.replace("http://localhost:8080/PontoWeb/index.jsp");
+                window.location.replace("http://localhost:8080/PontoWeb/admin");
             }, 2500);
-        </script>-->
+        </script>
         <%
             } else {
                 out.println("<br> <b>Tinta não excluída! <b>");

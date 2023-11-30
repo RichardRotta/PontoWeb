@@ -1,27 +1,37 @@
-
 package model;
 
-/**
- *
- * @author Derick
- */
 public class Funcionario {
+
     //Atrib
-    public String id;
+    public String ra;
+    public String senha;
     public String nome;
-    public String cargo;
+    public String cpf;
+    public String rg;
     public String setor;
-    public String nome_gestor;
-    public String carga_horaria;
-    public String hrs_extras;
+    public String numTelefone;
+    public String dataNascimento;
+    public String cargo;
+    public String cargaHora;
+    public String horaExtra;
+    public String acesso;
 
-    public String getId() {
-        return id;
+    public String getRa() {
+        return ra;
     }
 
-    public void setId(String id) {
-        this.id = id;
+    public void setRa(String ra) {
+        this.ra = ra;
     }
+
+    public String getSenha() {
+        return senha;
+    }
+
+    public void setSenha(String senha) {
+        this.senha = senha;
+    }
+    
 
     public String getNome() {
         return nome;
@@ -31,12 +41,20 @@ public class Funcionario {
         this.nome = nome;
     }
 
-    public String getCargo() {
-        return cargo;
+    public String getCpf() {
+        return cpf;
     }
 
-    public void setCargo(String cargo) {
-        this.cargo = cargo;
+    public void setCpf(String cpf) {
+        this.cpf = cpf;
+    }
+
+    public String getRg() {
+        return rg;
+    }
+
+    public void setRg(String rg) {
+        this.rg = rg;
     }
 
     public String getSetor() {
@@ -47,31 +65,53 @@ public class Funcionario {
         this.setor = setor;
     }
 
-    public String getNome_gestor() {
-        return nome_gestor;
+    public String getNumTelefone() {
+        return numTelefone;
     }
 
-    public void setNome_gestor(String nome_gestor) {
-        this.nome_gestor = nome_gestor;
+    public void setNumTelefone(String numTelefone) {
+        this.numTelefone = numTelefone;
     }
 
-    public String getCarga_horaria() {
-        return carga_horaria;
+    public String getDataNascimento() {
+        return dataNascimento;
     }
 
-    public void setCarga_horaria(String carga_horaria) {
-        this.carga_horaria = carga_horaria;
+    public void setDataNascimento(String dataNascimento) {
+        this.dataNascimento = dataNascimento;
     }
 
-    public String getSaldo_hrs_extras() {
-        return hrs_extras;
+    public String getCargo() {
+        return cargo;
     }
 
-    public void setSaldo_hrs_extras(String saldo_hrs_extras) {
-        this.hrs_extras = saldo_hrs_extras;
+    public void setCargo(String cargo) {
+        this.cargo = cargo;
+    }
+
+    public String getCargaHora() {
+        return cargaHora;
+    }
+
+    public void setCargaHora(String cargaHora) {
+        this.cargaHora = cargaHora;
+    }
+
+    public String getHoraExtra() {
+        return horaExtra;
+    }
+
+    public void setHoraExtra(String horaExtra) {
+        this.horaExtra = horaExtra;
+    }
+
+    public String getAcesso() {
+        return acesso;
+    }
+
+    public void setAcesso(String acesso) {
+        this.acesso = acesso;
     }
     
-    
-    
-    
+
 }

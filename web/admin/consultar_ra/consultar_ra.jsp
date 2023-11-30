@@ -15,22 +15,28 @@
             <h1 class="sigle-item-title">Consulta de Tinta</h1>
 
             <%
-                String id = request.getParameter("id");
+                String ra = request.getParameter("ra");
 
                 Tinta tinta = new Tinta();
-                tinta.setId(id);
+                tinta.setId(ra);
 
                 TintaDAO tintaDAO = new TintaDAO();
 
                 if (tintaDAO.consultarId(tinta) != null) {
             %>
             <div class="single-item-container">
-                <img src=<%= tinta.getImage()%> alt="Imagem">
                 <div class="p-3">
+                    <p><%= tinta.getRa()%></p>
                     <p><%= tinta.getNome()%></p>
-                    <p><%= tinta.getDescricao()%></p>
-                    <p><%= tinta.getRecomendacaoUso()%></p>
-                    <p><%= tinta.getCoresSugeridas()%></p>
+                    <p><%= tinta.getCpf()%></p>
+                    <p><%= tinta.getRg()%></p>
+                    <p><%= tinta.getSetor()%></p>
+                    <p><%= tinta.getNumeroTelefone()%></p>
+                    <p><%= tinta.getDataNascimento()%></p>
+                    <p><%= tinta.getCargo()%></p>
+                    <p><%= tinta.getCargaHora()%></p>
+                    <p><%= tinta.getHoraExtra()%></p>
+                    <p><%= tinta.getAcesso()%></p>
 
                 </div>
                   

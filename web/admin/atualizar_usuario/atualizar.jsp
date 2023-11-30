@@ -7,25 +7,21 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     </head>
     <body>
-        <h1>Atualizar Tinta</h1>
+        <h1>Atualizar Funcionário</h1>
 
         <%
             request.setCharacterEncoding("UTF-8");
                
             
-            String nome = request.getParameter("nome");
-            String descricao = request.getParameter("descricao");
-            String image = request.getParameter("image");
-            String recomendacaoUso = request.getParameter("recomendacaoUso");
-            String coresSugeridas = request.getParameter("coresSugeridas");
+            String ra = request.getParameter("ra");
+            String senha = request.getParameter("senha");
+            String acesso = request.getParameter("acesso");
 
             Tinta tinta = new Tinta();
             
-            tinta.setNome(nome);
-            tinta.setDescricao(descricao);
-            tinta.setImage(image);
-            tinta.setRecomendacaoUso(recomendacaoUso);
-            tinta.setCoresSugeridas(coresSugeridas);
+            tinta.setRa(ra);
+            tinta.setSenha(senha);
+            tinta.setAcesso(acesso);
 
             TintaDAO tintaDAO = new TintaDAO();
 
@@ -37,7 +33,7 @@
         </div>
         <script>
             setTimeout(function () {
-                window.location.replace("http://localhost:8080/WebClinica/index.jsp");
+                window.location.replace("http://localhost:8080/PontoWeb/admin");
             }, 2500);
         </script>
 

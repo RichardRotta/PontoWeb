@@ -28,7 +28,7 @@
                 if (acesso.equals("admin")) {
         %>
         <script> localStorage.setItem("logado", "true");</script>
-        <script> window.location.href = "usuarios/admin/";</script>
+        <script> window.location.href = "admin/";</script>
         <%
         } else if (acesso.equals("diretor")) {
         %>
