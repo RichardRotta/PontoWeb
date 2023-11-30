@@ -16,54 +16,59 @@
     </head>
     <body>
         <%
-    Usuario usuario = new Usuario();
-    ControleUsuario controleUsuario = new ControleUsuario();
+            Usuario usuario = new Usuario();
+            ControleUsuario controleUsuario = new ControleUsuario();
 
-    String ra = request.getParameter("ra");
-    String senha = request.getParameter("senha");
+            String ra = request.getParameter("ra");
+            String senha = request.getParameter("senha");
 
-    String acesso = controleUsuario.logarPadrao(ra, senha);
+            String acesso = controleUsuario.logar(ra, senha);
 
-    if (acesso != null) {
-        if (acesso.equals("admin")) {
-%>
-        <script> localStorage.setItem("logado", "true"); </script>
-        <script> window.location.href = "admin/cadastro/index.jsp";</script>
-<%
-        } else if (acesso.equals("gerente")) {
-%>
-        <script> localStorage.setItem("logado", "true"); </script>
-        <script> window.location.href = "gerente/pagina_gerente.jsp";</script>
-<%
+            if (acesso != null) {
+                if (acesso.equals("admin")) {
+        %>
+        <script> localStorage.setItem("logado", "true");</script>
+        <script> window.location.href = "usuarios/admin/";</script>
+        <%
+        } else if (acesso.equals("diretor")) {
+        %>
+        <script> localStorage.setItem("logado", "true");</script>
+        <script> window.location.href = "usuarios/diretor/";</script>
+        <%
         } else if (acesso.equals("funcionario")) {
-%>
-        <script> localStorage.setItem("logado", "true"); </script>
-        <script> window.location.href = "funcionario/pagina_funcionario.jsp";</script>
-<%
-        }
-    } else {
-%>
-   <div class="container p-3">
+        %>
+        <script> localStorage.setItem("logado", "true");</script>
+        <script> window.location.href = "usuarios/funcionario/";</script>
+        <%
+        } else if (acesso.equals("rh")) {
+        %>
+        <script> localStorage.setItem("logado", "true");</script>
+        <script> window.location.href = "usuarios/rh/";</script>
+        <%
+            }
+        } else {
+        %>
+        <div class="container p-3">
             <div class="container p-4 mt-5">
                 <h3 class="mt-5 mb-4 container">
                     Oops...
                     <small class="text-muted">Login negado</small>
                 </h3>
-                <img class="img-fluid" src="../imagem/mensagem/access_denied.svg" alt="negado"  width="300" 
+                <img class="img-fluid" src="imagem/mensagem/access_denied.svg" alt="negado"  width="300" 
                      height="450" /> 
             </div>
         </div>
-<%
-    }
-%>
- }
-
-        
+        <%
+            }
+        %>
+        }
     </body>
     <script>
-
-        function onRedirect() {
-            window.location.href = "login.html";
-        }
+        setTimeout(function () {
+            window.location.replace("http://localhost:8080/PontoWeb/");
+        }, 2500);
+//        function onRedirect() {
+//            window.location.href = "index.html";
+//        }
     </script>
 </html>

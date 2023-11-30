@@ -16,31 +16,30 @@
     <body class="d-flex align-items-center py-4 ">
         <main class="form-signin w-100 m-auto ">
             <form class="form-container" name="frmLogin" method="post" action="index.jsp">
-                <div class="d-flex justify-content-center align-items-center mb-5">   
-                    <img src="../imagem/image.png" alt="" width="30" height="30">
-                    <h6 class="h6 app-name">PontoWeb</h6>
-                </div>
-                <h1 class="h3 mb-3 fw-normal" align="center">Login</h1>
+                <h1 class="h3 mb-4 fw-normal" align="center">Login</h1>
 
                 <div class="form-floating mb-3">
-                    <input type="text" class="form-control" id="floatingInput" placeholder="ra" name="ra">
+                    <input type="text" class="form-control rounded color_itens" id="floatingInput" placeholder="ra" name="ra">
                     <label for="floatingInput">Usuário</label>
                 </div>
                 <div class="form-floating mb-3">
-                    <input type="password" class="form-control" id="floatingPassword" placeholder="Password" name="senha">
+                    <input type="password" class="form-control rounded" id="floatingPassword" placeholder="Password" name="senha">
                     <label for="floatingPassword">Senha</label>
                 </div>
 
-                <button class="btn btn-primary w-100" type="submit">Acessar</button>
-                <p class="mt-5 mb-3 text-body-secondary" align="center">&copy; 2023</p>
+                <button class="btn btn-primary w-100 rounded-pill color_itens" type="submit">Acessar</button>
+                <!--                <p class="mt-5 mb-3 text-body-secondary" align="center">&copy; 2023</p>-->
+                <div class="d-flex justify-content-center align-items-center ms-4 mt-5">   
+                    <img src="imagem/cadeado_logo.png" alt="" width="550" height="275">
+                </div>
             </form>
 
-             
+
         </main>
-        
-        
-        <script src="../assets/dist/js/bootstrap.bundle.min.js"></script>
-        
+
+
+        <script src="/assets/dist/js/bootstrap.bundle.min.js"></script>
+
         <script>
 //            const logado = localStorage.getItem("logado");
 //            if (logado === "true") {

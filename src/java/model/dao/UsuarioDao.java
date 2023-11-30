@@ -12,7 +12,7 @@ public class UsuarioDao {
     // Atrib.
     
     // Métodos
-    public String validarLoginPadrao(Usuario usuario) throws ClassNotFoundException {
+    public String validarLogin(Usuario usuario) throws ClassNotFoundException {
     Connection conexao = null;
     try {
         conexao = ConectaDB.conectar();

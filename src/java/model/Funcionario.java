@@ -12,9 +12,8 @@ public class Funcionario {
     public String cargo;
     public String setor;
     public String nome_gestor;
-    public String nome_equipe;
     public String carga_horaria;
-    public String saldo_hrs_extras;
+    public String hrs_extras;
 
     public String getId() {
         return id;
@@ -56,14 +55,6 @@ public class Funcionario {
         this.nome_gestor = nome_gestor;
     }
 
-    public String getNome_equipe() {
-        return nome_equipe;
-    }
-
-    public void setNome_equipe(String nome_equipe) {
-        this.nome_equipe = nome_equipe;
-    }
-
     public String getCarga_horaria() {
         return carga_horaria;
     }
@@ -73,11 +64,11 @@ public class Funcionario {
     }
 
     public String getSaldo_hrs_extras() {
-        return saldo_hrs_extras;
+        return hrs_extras;
     }
 
     public void setSaldo_hrs_extras(String saldo_hrs_extras) {
-        this.saldo_hrs_extras = saldo_hrs_extras;
+        this.hrs_extras = saldo_hrs_extras;
     }
     
     
