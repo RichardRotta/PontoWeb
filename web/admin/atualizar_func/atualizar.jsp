@@ -14,6 +14,7 @@
                
             
             String ra = request.getParameter("ra");
+            String senha = request.getParameter("senha");
             String nome = request.getParameter("nome");
             String cpf = request.getParameter("cpf");
             String rg = request.getParameter("rg");
@@ -23,10 +24,12 @@
             String cargo = request.getParameter("cargo");
             String cargaHora = request.getParameter("cargaHora");
             String horaExtra = request.getParameter("horaExtra");
+            String acesso = request.getParameter("acesso");
 
             Funcionario funcionario = new Funcionario();
             
             funcionario.setRa(ra);
+            funcionario.setSenha(senha);
             funcionario.setNome(nome);
             funcionario.setCpf(cpf);
             funcionario.setRg(rg);
@@ -36,6 +39,7 @@
             funcionario.setCargo(cargo);
             funcionario.setCargaHora(cargaHora);
             funcionario.setHoraExtra(horaExtra);
+            funcionario.setAcesso(acesso);
 
             FuncionarioDAO funcionarioDAO = new FuncionarioDAO();
 
@@ -43,7 +47,7 @@
         %>
         <h1>Cadastrado com Sucesso!</h1>
         <div class="">
-            <img src="../imagem/mensagem/alterar.svg"/>
+            <img src="../../imagem/mensagem/alterar.svg"/>
         </div>
         <script>
             setTimeout(function () {
