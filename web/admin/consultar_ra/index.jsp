@@ -10,9 +10,9 @@
     <body class="body-container">
         <div class="container p-5">
             <h1 class="h3 mb-3">Consulta por RA</h1>
-            <form name="FormCliCons form-container" method="post" action="consultar_id.jsp">
+            <form name="FormCliCons form-container" method="post" action="consultar_ra.jsp">
                 <div class="mb-3">
-                    <input type="text" class="form-control" id="ra" name="ra" placeholder="Id">
+                    <input type="text" class="form-control" id="ra" name="ra" placeholder="RA">
                 </div>
                 <div class="d-flex justify-content-center">
                     <button type="reset" class="btn btn-primary">Limpar</button>

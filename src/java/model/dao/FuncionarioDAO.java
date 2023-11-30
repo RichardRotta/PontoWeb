@@ -39,7 +39,7 @@ public class FuncionarioDAO {
         try {
             conexao = ConectaDB.conectar();
             Statement stmt = conexao.createStatement();
-            String sql = "SELECT nome, cpf, rg, setor, numTelefone, dataNascimento, cargo, cargaHora, horaExtra from funcionario WHERE ra = '" + funcionario.getRa() + "'";
+            String sql = "SELECT nome, cpf, rg, setor, numTelefone, dataNascimento, cargo, cargaHora, horaExtra, acesso from funcionario WHERE ra = '" + funcionario.getRa() + "'";
             ResultSet rs = stmt.executeQuery(sql);
 
             int n_reg = 0;
@@ -54,6 +54,7 @@ public class FuncionarioDAO {
                 funcionario.setCargo(rs.getString("cargo"));
                 funcionario.setCargaHora(rs.getString("cargaHora"));
                 funcionario.setHoraExtra(rs.getString("horaExtra"));
+                funcionario.setAcesso(rs.getString("acesso"));
                 n_reg++;
             }
             conexao.close();
