@@ -2,6 +2,7 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@page import="java.text.*" import="java.lang.*" %>
 <%@page import="model.Usuario"%>
+<%@page import="model.dao.UsuarioDao"%>
 <%@page import="control.ControleUsuario"%>
 <%@ page import="java.io.*, java.util.*" %>
 
@@ -17,6 +18,7 @@
     <body>
         <%
             Usuario usuario = new Usuario();
+            UsuarioDao usuarioDao = new UsuarioDao();
             ControleUsuario controleUsuario = new ControleUsuario();
 
             String ra = request.getParameter("ra");
@@ -24,6 +26,11 @@
             session.setAttribute("ra", ra);
 
             String acesso = controleUsuario.logar(ra, senha);
+            usuario.setRa(ra);
+            usuarioDao.consultarSetor(usuario);
+            
+            String setor = usuario.getSetor();
+            session.setAttribute("setor", setor);
             
             if (acesso != null) {
                 if (acesso.equals("admin")) {

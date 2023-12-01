@@ -11,6 +11,7 @@ public class Usuario {
     private String senha;
     private String nome;
     private String acesso;
+    private String setor;
     
     //Métodos
     public String getRa() {
@@ -44,5 +45,14 @@ public class Usuario {
     public void setAcesso(String acesso) {
         this.acesso = acesso;
     }
+
+    public String getSetor() {
+        return setor;
+    }
+
+    public void setSetor(String setor) {
+        this.setor = setor;
+    }
+    
    
 }

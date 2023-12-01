@@ -4,6 +4,7 @@ import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 import model.Funcionario;
+import model.Usuario;
 import util.ConectaDB;
 
 public class FuncionarioDAO {
@@ -135,6 +136,84 @@ public class FuncionarioDAO {
                 return null;
             } else {
                 return funcionario;
+            }
+        } catch (ClassNotFoundException | SQLException ex) {
+            System.out.println(" Exception: " + ex.toString());
+            return null;
+        }
+    }
+    
+    public List consultaSetor() {
+        Connection conexao = null;
+
+        Usuario usuario = new Usuario();
+        Funcionario funcionario = new Funcionario();
+        
+        List listaPontoSetor = new ArrayList();
+        
+        try {
+            conexao = ConectaDB.conectar();
+            Statement stmt = conexao.createStatement();
+            String sql = "SELECT nome, setor, cargo, cargaHora, horaExtra from funcionario WHERE setor = '" + funcionario.getSetor() + "'";
+            ResultSet rs = stmt.executeQuery(sql);
+
+            int n_reg = 0;
+            while (rs.next()) {
+//                Funcionario funcionario = new Funcionario();
+                funcionario.setNome(rs.getString("nome"));
+                funcionario.setSetor(rs.getString("setor"));
+                funcionario.setCargo(rs.getString("cargo"));
+                funcionario.setCargaHora(rs.getString("cargaHora"));
+                funcionario.setHoraExtra(rs.getString("horaExtra"));
+                
+                listaPontoSetor.add(funcionario);
+                
+                n_reg++;
+            }
+            conexao.close();
+
+            if (n_reg == 0) {
+                return null;
+            } else {
+                return listaPontoSetor;
+            }
+        } catch (ClassNotFoundException | SQLException ex) {
+            System.out.println(" Exception: " + ex.toString());
+            return null;
+        }
+    }
+    
+    public List consultaRh() {
+        Connection conexao = null;
+
+        List listaPontoRh = new ArrayList();
+        
+        try {
+            conexao = ConectaDB.conectar();
+            Statement stmt = conexao.createStatement();
+            String sql = "SELECT nome, setor, cargo, cargaHora, horaExtra from funcionario WHERE acesso <> 'admin'";
+            ResultSet rs = stmt.executeQuery(sql);
+
+            int n_reg = 0;
+            while (rs.next()) {
+                // "popular o obj funcionario"
+                Funcionario funcionario = new Funcionario();
+                funcionario.setNome(rs.getString("nome"));
+                funcionario.setSetor(rs.getString("setor"));
+                funcionario.setCargo(rs.getString("cargo"));
+                funcionario.setCargaHora(rs.getString("cargaHora"));
+                funcionario.setHoraExtra(rs.getString("horaExtra"));
+                
+                listaPontoRh.add(funcionario);
+                
+                n_reg++;
+            }
+            conexao.close();
+
+            if (n_reg == 0) {
+                return null;
+            } else {
+                return listaPontoRh;
             }
         } catch (ClassNotFoundException | SQLException ex) {
             System.out.println(" Exception: " + ex.toString());

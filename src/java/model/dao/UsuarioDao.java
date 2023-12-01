@@ -33,19 +33,18 @@ public class UsuarioDao {
         return null;
     }
 }
-    public Usuario obterUsuarioPorRa(Usuario usuario) throws ClassNotFoundException {
+    public Usuario consultarSetor(Usuario usuario) throws ClassNotFoundException {
         Connection conexao = null;
 
         try{
             conexao = ConectaDB.conectar();
             Statement stmt = conexao.createStatement();
-            String sql = "SELECT nome from usuario WHERE ra = '" + usuario.getRa()+ "'";
+            String sql = "SELECT setor from funcionario WHERE ra = '" + usuario.getRa()+ "'";
             ResultSet rs = stmt.executeQuery(sql);
 
             int n_reg = 0;
             while (rs.next()){
-                // "popular o obj funcionario"
-                usuario.setNome(rs.getString("nome"));
+                usuario.setSetor(rs.getString("setor"));
                 n_reg++;
             }
             conexao.close();
