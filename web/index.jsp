@@ -21,9 +21,10 @@
 
             String ra = request.getParameter("ra");
             String senha = request.getParameter("senha");
+            session.setAttribute("ra", ra);
 
             String acesso = controleUsuario.logar(ra, senha);
-
+            
             if (acesso != null) {
                 if (acesso.equals("admin")) {
         %>
@@ -61,7 +62,7 @@
         <%
             }
         %>
-        }
+        
     </body>
     <script>
         setTimeout(function () {

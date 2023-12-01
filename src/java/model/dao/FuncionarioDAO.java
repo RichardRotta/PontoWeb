@@ -109,6 +109,38 @@ public class FuncionarioDAO {
             return null;
         }
     }
+    
+    public Funcionario consultaPessoal(Funcionario funcionario) {
+        Connection conexao = null;
+
+        try {
+            conexao = ConectaDB.conectar();
+            Statement stmt = conexao.createStatement();
+            String sql = "SELECT nome, setor, cargo, cargaHora, horaExtra from funcionario WHERE ra = '" + funcionario.getRa() + "'";
+            ResultSet rs = stmt.executeQuery(sql);
+
+            int n_reg = 0;
+            while (rs.next()) {
+                // "popular o obj funcionario"
+                funcionario.setNome(rs.getString("nome"));
+                funcionario.setSetor(rs.getString("setor"));
+                funcionario.setCargo(rs.getString("cargo"));
+                funcionario.setCargaHora(rs.getString("cargaHora"));
+                funcionario.setHoraExtra(rs.getString("horaExtra"));
+                n_reg++;
+            }
+            conexao.close();
+
+            if (n_reg == 0) {
+                return null;
+            } else {
+                return funcionario;
+            }
+        } catch (ClassNotFoundException | SQLException ex) {
+            System.out.println(" Exception: " + ex.toString());
+            return null;
+        }
+    }
 
     public boolean excluir(Funcionario funcionario) {
         Connection conexao = null;

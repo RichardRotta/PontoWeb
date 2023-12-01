@@ -1,39 +1,39 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@page import="model.dao.UsuarioDao"%>
+<%@page import="model.dao.FuncionarioDAO"%>
 <%@page import="model.Usuario"%>
+<%@page import="model.Funcionario"%>
+
 <!DOCTYPE html>
 <html>
-<head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <title>Ponto Pessoal</title>
-</head>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <title>Ponto Pessoal</title>
+    </head>
 
-<body>
-    <%
-        // Obter o ra
-        String ra = request.getParameter("ra");
-
-        if (ra != null && !ra.isEmpty()) {
-            UsuarioDao usuarioDao = new UsuarioDao();
-            Usuario usuario = new Usuario();
-            usuario.setRa(ra); // Defina o ra no objeto Usuario
-
-            if (usuario != null) {
-    %>
-    <h1>Seja Bem Vindo,<%= usuario.getNome()%></h1>
-    
-    <!-- Outros elementos HTML ou lógica aqui -->
-    
-    <%
-            }
+    <body>       
+        <%
+            Funcionario funcionario = new Funcionario();
+            FuncionarioDAO funcionarioDAO = new FuncionarioDAO();
             
-            try {
-                usuarioDao.fecharConexao();
-            } catch (Exception e) {
-                out.println("Erro ao fechar a conexão: " + e.getMessage());
-                e.printStackTrace();
+            String ra = (String) session.getAttribute("ra");
+            funcionario.setRa(ra);
+            
+            if (funcionarioDAO.consultaPessoal(funcionario) != null) {
+        %>
+
+        <h1>Seja Bem Vindo,</h1>
+        <h1><%=funcionario.getNome()%></h1>
+
+        <div>
+            <p><img src="" alt="" width="" height=""> <span><b>Cargo:</b> <%=funcionario.getCargo()%></span></p>
+            <p><img src="" alt="" width="" height=""> <span><b>Carga Horária:</b> <%=funcionario.getCargaHora()%></span></p>
+            <p><img src="" alt="" width="" height=""> <span><b>Setor:</b> <%=funcionario.getSetor()%></span></p>
+        </div>
+
+        <%
             }
-        }
-    %>
-</body>
+        %>
+
+    </body>
 </html>
