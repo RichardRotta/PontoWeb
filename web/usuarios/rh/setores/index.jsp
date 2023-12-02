@@ -1,6 +1,8 @@
+<%@page import="java.awt.Point"%>
 <%@page import="model.Funcionario"%>
 <%@page import="model.dao.FuncionarioDAO"%>
 <%@page import="model.Usuario"%>
+<%@page import="model.Pontos"%>
 <%@page import="java.util.List"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -9,6 +11,7 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <link href="../../../assets/dist/css/bootstrap.min.css" rel="stylesheet" >
         <link href="../../../styles/styles.css" rel="stylesheet" >
+        <link href="../../../styles/pessoal/style.css" rel="stylesheet" >
         <title>Consulta de Pontos</title>
     </head>
     <body>
@@ -22,63 +25,79 @@
 
                 if (funcionarioDAO.consultaRh() != null) {
             %>
-            <div id="catalog" class="container">
-                <div class="row  text-center">
-                    <%
-                        List<Funcionario> listaRh = funcionarioDAO.consultaRh();
+            <div class="container">
+                <h2 class="h2-center">Registros de Pontos</h2>
+                <%
+                    List<Funcionario> listaPontoRh = funcionarioDAO.consultaRh();
 
-                        if (listaRh == null) {
-                    %>
-                    <div class="container p-4 mt-5">
-                        <h3 class="mt-5 mb-4">
-                            Oops...
-                            <small class="text-muted">Não há itens</small>
-                        </h3>
-                        <img class="img-fluid" src="imagem/mensagem/erroConsulta.svg" alt="não há itens"  width="300" 
-                             height="450" /> 
-
-                    </div>
-
-                    <%
-                    } else {
-                        for (int i = 0; i < listaRh.size(); i++) {
-                            funcionario = listaRh.get(i);
-
-                    %>
-
-                    <div class="col-12 col-md-6 col-lg-4 mb-4 p-3">
-                        <div class="item-box catalog-item-container">
-                            <p><b>Nome:</b> <%= funcionario.getNome()%></p>
-                            <p><b>Setor:</b> <%= funcionario.getSetor()%></p>
-                            <p><b>Cargo:</b> <%= funcionario.getCargo()%></p>
-                            <p><b>Carga Horária:</b> <%= funcionario.getCargaHora()%></p>
-                            <p><b>Horas Extras:</b>: <%= funcionario.getHoraExtra()%></p>
-                        </div>
-                    </div>
-                    <%
-                            }
-                        }
-                    %>
+                    if (listaPontoRh == null) {
+                %>
+                <div class="container p-4">
+                    <h3 class=" mb-4">
+                        Oops...
+                        <small class="text-muted">Não há registros</small>
+                    </h3>
+                    <img class="img-fluid" src="../../../imagem/mensagem/erroConsulta.svg" alt="não há itens"  width="300" 
+                         height="450" /> 
                 </div>
+
+                <%
+                } else {
+                %>
+                <table class="ponto-table">
+                    <thead>
+                        <tr>
+                            <th>Nome</th>
+                            <th>Setor</th>
+                            <th>Cargo</th>
+                            <th>Carga Horária</th>
+                            <th>Hora Extra</th>
+                            <th>Data</th>
+                            <th>Entrada</th>
+                            <th>Entrada Intervalo</th>
+                            <th>Saída Intervalo</th>
+                            <th>Saída</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <%
+                            for (int i = 0; i < listaPontoRh.size(); i++) {
+                                funcionario = listaPontoRh.get(i);
+                        %>
+                        <tr>
+                            <td><%= funcionario.getNome()%></td>
+                            <td><%= funcionario.getCargo()%></td>
+                            <td><%= funcionario.getCargaHora()%></td>
+                            <td><%= funcionario.getHoraExtra()%></td>
+                            <td><%= funcionario.getData()%></td>
+                            <td><%= funcionario.getEntrada()%></td>
+                            <td><%= funcionario.getEntradaIntervalo()%></td>
+                            <td><%= funcionario.getSaidaIntervalo()%></td>
+                            <td><%= funcionario.getSaida()%></td>
+                        </tr>
+                        <%
+                            }
+                        %>
+                    </tbody>
+                </table>
             </div>
-            <%
-            } else {
-            %>
-
-            <div class="alert alert-danger" role="alert">
-                Item não encontrado.
-            </div>
-            <script>
-                setTimeout(function () {
-                    window.location.replace("http://localhost:8080/PontoWeb/admin/consultar_ra");
-                }, 2500);
-            </script>
-            <%
-                }
-
-            %>
-
         </div>
+        <%                }
+        } else {
+        %>
+        <div class="container text-center form-container-2 p-4">
+            <h3 class=" mb-4">
+                Oops...
+                <small class="text-muted">Não há registros</small>
+            </h3>
+            <img class="img-fluid" src="../../../imagem/mensagem/erroConsulta.svg" alt="não há itens"  width="300" 
+                 height="450" /> 
+        </div>
+        <%
+            }
+        %>
 
-    </body>
+    </div>
+
+</body>
 </html>

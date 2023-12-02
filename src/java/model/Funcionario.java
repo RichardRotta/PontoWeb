@@ -3,18 +3,23 @@ package model;
 public class Funcionario {
 
     //Atrib
-    public String ra;
-    public String senha;
-    public String nome;
-    public String cpf;
-    public String rg;
-    public String setor;
-    public String numTelefone;
-    public String dataNascimento;
-    public String cargo;
-    public String cargaHora;
-    public String horaExtra;
-    public String acesso;
+    private String ra;
+    private String senha;
+    private String nome;
+    private String cpf;
+    private String rg;
+    private String setor;
+    private String numTelefone;
+    private String dataNascimento;
+    private String cargo;
+    private String cargaHora;
+    private String horaExtra;
+    private String acesso;
+    private String data;
+    private String entrada;
+    private String entradaIntervalo;
+    private String saidaIntervalo;
+    private String saida;
 
     public String getRa() {
         return ra;
@@ -111,6 +116,46 @@ public class Funcionario {
 
     public void setAcesso(String acesso) {
         this.acesso = acesso;
+    }
+
+    public String getData() {
+        return data;
+    }
+
+    public void setData(String data) {
+        this.data = data;
+    }
+
+    public String getEntrada() {
+        return entrada;
+    }
+
+    public void setEntrada(String entrada) {
+        this.entrada = entrada;
+    }
+
+    public String getEntradaIntervalo() {
+        return entradaIntervalo;
+    }
+
+    public void setEntradaIntervalo(String entradaIntervalo) {
+        this.entradaIntervalo = entradaIntervalo;
+    }
+
+    public String getSaidaIntervalo() {
+        return saidaIntervalo;
+    }
+
+    public void setSaidaIntervalo(String saidaIntervalo) {
+        this.saidaIntervalo = saidaIntervalo;
+    }
+
+    public String getSaida() {
+        return saida;
+    }
+
+    public void setSaida(String saida) {
+        this.saida = saida;
     }
     
 

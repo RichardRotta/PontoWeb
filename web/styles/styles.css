@@ -7,6 +7,10 @@
     background-color: #ffffff;
     padding: 32px;
     border-radius: 15px;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+}
+.form-container h1{
+    text-align: center;
 }
 
 .app-name {
@@ -27,48 +31,19 @@
     text-align: center;
 }
 
-.form-container {
-    box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
-}
-
 .color_itens{
-    color: #408B6D;
+    background-color: #408B6D;
 }
 
 .container-h1{
     text-align: center;
     font-size: 30px;
     margin: 32px 0;
+    color: #429272;
 }
 
 .link-container{
     text-align: center;
-}
-
-.link-container button{
-    background-color: #429272;
-    margin-bottom: 10px;
-    border-radius: 10px;
-    border: none;
-    padding: 10px;
-    width: 50%;
-}
-
-.link-container button:hover{
-    background-color: white;
-    border: solid #429272;
-    width: 50%;
-}
-
-.link-container a:hover{
-    color: #429272;
-    font-weight: 700;
-}
-
-.link-container a{
-    color: white;
-    font-size: 18px;
-    text-decoration: none;
 }
 
 .catalog-item-container {

@@ -21,11 +21,11 @@
         <script>
             function pessoal()
             {
-                window.location.href = "http://localhost:8080/PontoWeb/usuarios/diretor/pessoal";
+                window.location.href = "http://localhost:8080/PontoWeb/usuarios/rh/pessoal";
             }
             function setor()
             {
-                window.location.href = "http://localhost:8080/PontoWeb/usuarios/diretor/setor";
+                window.location.href = "http://localhost:8080/PontoWeb/usuarios/rh/setores";
             }
             function logout()
             {

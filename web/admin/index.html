@@ -6,17 +6,42 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link href="../assets/dist/css/bootstrap.min.css" rel="stylesheet" >
         <link href="../styles/styles.css" rel="stylesheet" >
+        <link href="../styles/pessoal/style.css" rel="stylesheet" >
 
     </head>
     <body class="body-container">
         <div class="container p-5 form-container">
-            <div class="link-container ">
-                <h1 class="h3 mb-5">Escolha o que deseja fazer!</h1>
-                <button><a href="http://localhost:8080/PontoWeb/admin/cadastro_func">Cadastrar Funcionário</a></button><br/>
-                <button><a href="http://localhost:8080/PontoWeb/admin/consultar_ra">Consultar RA</a></button><br/>
-                <button><a href="http://localhost:8080/PontoWeb/admin/atualizar_func">Atualizar Funcionário</a></button><br/>
-                <button><a href="http://localhost:8080/PontoWeb/admin/excluir">Excluir</a></button>
+            <h1 class="h3 mb-5">Escolha qual opção deseja usar!</h1>
+            <div class="logout-button">
+                <button onclick="cadastrar()">Cadastrar Funcionário</button><br/>
+                <button onclick="consultar()">Consultar Funcionário</button><br/>
+                <button onclick="atualizar()">Atualizar Funcionario</button><br/>
+                <button onclick="excluir()">Excluir</button><br/>
+                <button onclick="logout()">Sair</button><br/>
             </div>
         </div>
+        <script>
+            function cadastrar()
+            {
+                window.location.href = "http://localhost:8080/PontoWeb/admin/cadastro_func";
+            }
+            function consultar()
+            {
+                window.location.href = "http://localhost:8080/PontoWeb/admin/consultar_ra";
+            }
+            function atualizar()
+            {
+                window.location.href = "http://localhost:8080/PontoWeb/admin/atualizar_func";
+            }
+            function excluir()
+            {
+                window.location.href = "http://localhost:8080/PontoWeb/admin/excluir";
+            }
+            function logout()
+            {
+                localStorage.setItem("logado", "false");
+                window.location.replace("http://localhost:8080/PontoWeb");
+            }
+        </script>
     </body>
 </html>

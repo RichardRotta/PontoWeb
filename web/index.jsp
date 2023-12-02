@@ -56,7 +56,7 @@
             }
         } else {
         %>
-        <div class="container p-3">
+        <div class="container text-center p-3">
             <div class="container p-4 mt-5">
                 <h3 class="mt-5 mb-4 container">
                     Oops...
