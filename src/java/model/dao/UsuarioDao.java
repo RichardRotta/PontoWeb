@@ -58,33 +58,7 @@ public class UsuarioDao {
             System.out.println(" Exception: " + ex.toString());
             return null;
         }
-//        Connection conexao = null;
-//        try {
-//            conexao = ConectaDB.conectar();
-//            String sql = "SELECT * FROM usuario WHERE ra = ?";
-//
-//            try (PreparedStatement stmt = conexao.prepareStatement(sql)) {
-//                stmt.setString(1, ra);
-//
-//                try (ResultSet rs = stmt.executeQuery()) {
-//                    if (rs.next()) {
-//                        Usuario usuario = new Usuario();
-//                        usuario.setRa(rs.getString("ra"));
-//                        usuario.setNome(rs.getString("nome"));
-//                        usuario.setAcesso(rs.getString("acesso"));
-//                        // Adicione outros atributos conforme necessário
-//
-//                        return usuario;
-//                    } else {
-//                        
-//                        return null;
-//                    }
-//                }
-//            }
-//        } catch (SQLException | ClassNotFoundException ex) {
-//            System.out.println("Exception: " + ex.toString());
-//            return null;
-//        }
+
     }
     public void fecharConexao() {
     try {
